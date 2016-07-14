@@ -16,16 +16,13 @@
 
 package com.nalbam.data.jpa.web;
 
+import com.nalbam.data.jpa.domain.City;
 import com.nalbam.data.jpa.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequestMapping("/city")
 public class CityController {
 
@@ -35,9 +32,9 @@ public class CityController {
     @ResponseBody
     @Transactional(readOnly = true)
     @RequestMapping(method = RequestMethod.GET, value = "")
-    public String get(@RequestParam(value = "state", defaultValue = "Bath") String state,
-                      @RequestParam(value = "country", defaultValue = "UK") String country) {
-        return this.cityService.getCity(state, country).toString();
+    public City get(@RequestParam(value = "state", defaultValue = "Bath") String state,
+                    @RequestParam(value = "country", defaultValue = "UK") String country) {
+        return this.cityService.getCity(state, country);
     }
 
 }
