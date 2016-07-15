@@ -14,29 +14,12 @@
  * limitations under the License.
  */
 
-package com.nalbam.data.jpa.service;
+package com.nalbam.data.jpa.domain;
 
-import org.springframework.util.Assert;
+import com.nalbam.data.jpa.domain.Rating;
 
-import java.io.Serializable;
+public interface ReviewsSummary {
 
-public class CitySearchCriteria implements Serializable {
-
-    private static final long serialVersionUID = 1L;
-
-    private String name;
-
-    public CitySearchCriteria(String name) {
-        Assert.notNull(name, "Name must not be null");
-        this.name = name;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+	long getNumberOfReviewsWithRating(Rating rating);
 
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.nalbam.data.jpa.service;
+package com.nalbam.data.jpa.repository;
 
 import com.nalbam.data.jpa.domain.City;
 import com.nalbam.data.jpa.domain.Hotel;
@@ -27,7 +27,7 @@ import org.springframework.data.repository.Repository;
 
 import java.util.List;
 
-interface HotelRepository extends Repository<Hotel, Long> {
+public interface HotelRepository extends Repository<Hotel, Long> {
 
     Hotel findByCityAndName(City city, String name);
 

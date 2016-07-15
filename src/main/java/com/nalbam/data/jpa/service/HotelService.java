@@ -16,10 +16,7 @@
 
 package com.nalbam.data.jpa.service;
 
-import com.nalbam.data.jpa.domain.City;
-import com.nalbam.data.jpa.domain.Hotel;
-import com.nalbam.data.jpa.domain.Review;
-import com.nalbam.data.jpa.domain.ReviewDetails;
+import com.nalbam.data.jpa.domain.*;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

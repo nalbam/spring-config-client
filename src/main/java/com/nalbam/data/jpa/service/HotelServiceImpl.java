@@ -17,6 +17,8 @@
 package com.nalbam.data.jpa.service;
 
 import com.nalbam.data.jpa.domain.*;
+import com.nalbam.data.jpa.repository.HotelRepository;
+import com.nalbam.data.jpa.repository.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -85,4 +87,5 @@ class HotelServiceImpl implements HotelService {
             return count == null ? 0 : count;
         }
     }
+
 }

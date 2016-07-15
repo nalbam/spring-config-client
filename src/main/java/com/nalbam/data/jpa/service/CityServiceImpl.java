@@ -18,6 +18,8 @@ package com.nalbam.data.jpa.service;
 
 import com.nalbam.data.jpa.domain.City;
 import com.nalbam.data.jpa.domain.HotelSummary;
+import com.nalbam.data.jpa.repository.CityRepository;
+import com.nalbam.data.jpa.repository.HotelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
