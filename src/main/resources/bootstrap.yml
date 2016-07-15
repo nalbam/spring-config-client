@@ -2,7 +2,7 @@ spring:
   application:
     name: foo
   profiles:
-    active: dev
+    active: ${PROFILE:default}
   cloud:
     config:
       uri: http://localhost:8888
