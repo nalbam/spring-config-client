@@ -151,8 +151,7 @@ INSERT INTO review (hotel_id, idx, check_in_date, rating, trip_type, title, deta
 -- Melbourne
 INSERT INTO city (country, name, state, map) VALUES ('USA', 'Melbourne', 'FL', '28.083627, -80.608109');
 INSERT INTO hotel (city_id, name, address, zip) VALUES (17, 'Radisson Suite Hotel Oceanfront', '3101 North Hwy', '32903');
-INSERT INTO review (hotel_id, idx, check_in_date, rating, trip_type, title, details);
-VALUES (21, 0, '2005-06-15', 3, 3, 'A very nice hotel', 'I can''t fault this hotel and I have stayed here many times.  Always friendly staff and lovely atmosphere.');
+INSERT INTO review (hotel_id, idx, check_in_date, rating, trip_type, title, details) VALUES (21, 0, '2005-06-15', 3, 3, 'A very nice hotel', 'I can''t fault this hotel and I have stayed here many times.  Always friendly staff and lovely atmosphere.');
 INSERT INTO review (hotel_id, idx, check_in_date, rating, trip_type, title, details) VALUES (21, 1, '2006-01-20', 2, 4, 'Comfortable and good value', 'To complaints at all.');
 INSERT INTO review (hotel_id, idx, check_in_date, rating, trip_type, title, details) VALUES (21, 2, '2007-08-21', 3, 1, 'Above average', 'Better than a lot of hotels in the area and not too pricey.');
 
