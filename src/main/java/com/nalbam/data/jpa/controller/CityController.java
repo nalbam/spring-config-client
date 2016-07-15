@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.nalbam.data.jpa.web;
+package com.nalbam.data.jpa.controller;
 
 import com.nalbam.data.jpa.domain.City;
 import com.nalbam.data.jpa.service.CityService;
@@ -42,7 +42,8 @@ public class CityController {
 
     @Transactional(readOnly = true)
     @RequestMapping(method = RequestMethod.GET, value = "search")
-    public Page<City> search(@RequestParam(value = "name", defaultValue = "") String name, Pageable pageable) {
+    public Page<City> search(@RequestParam(value = "name", defaultValue = "") String name,
+                             Pageable pageable) {
         return this.cityService.findCities(name, pageable);
     }
 
