@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.nalbam.data.jpa.repository;
+package com.nalbam.config.client.repository;
 
-import com.nalbam.data.jpa.domain.City;
-import com.nalbam.data.jpa.domain.Hotel;
-import com.nalbam.data.jpa.domain.HotelSummary;
-import com.nalbam.data.jpa.domain.RatingCount;
+import com.nalbam.config.client.domain.City;
+import com.nalbam.config.client.domain.HotelSummary;
+import com.nalbam.config.client.domain.Hotel;
+import com.nalbam.config.client.domain.RatingCount;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;

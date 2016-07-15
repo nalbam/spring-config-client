@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.nalbam.data.jpa.domain;
+package com.nalbam.config.client.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

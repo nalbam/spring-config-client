@@ -14,16 +14,21 @@
  * limitations under the License.
  */
 
-package com.nalbam.data.jpa;
+package com.nalbam.config.client.service;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.nalbam.config.client.domain.City;
+import com.nalbam.config.client.domain.HotelSummary;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
-@SpringBootApplication
-public class DataJpaApplication {
+public interface CityService {
 
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(DataJpaApplication.class, args);
-    }
+    Page<City> findAll();
+
+    Page<City> findCities(String name, Pageable pageable);
+
+    City getCity(String name, String country);
+
+    Page<HotelSummary> getHotels(City city, Pageable pageable);
 
 }

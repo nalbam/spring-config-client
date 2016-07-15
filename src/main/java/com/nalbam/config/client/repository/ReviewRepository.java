@@ -14,23 +14,20 @@
  * limitations under the License.
  */
 
-package com.nalbam.data.jpa.service;
+package com.nalbam.config.client.repository;
 
-import com.nalbam.data.jpa.domain.*;
-
+import com.nalbam.config.client.domain.Review;
+import com.nalbam.config.client.domain.Hotel;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.Repository;
 
-public interface HotelService {
+public interface ReviewRepository extends Repository<Review, Long> {
 
-	Hotel getHotel(City city, String name);
+    Page<Review> findByHotel(Hotel hotel, Pageable pageable);
 
-	Page<Review> getReviews(Hotel hotel, Pageable pageable);
+    Review findByHotelAndIndex(Hotel hotel, int index);
 
-	Review getReview(Hotel hotel, int index);
-
-	Review addReview(Hotel hotel, ReviewDetails details);
-
-	ReviewsSummary getReviewSummary(Hotel hotel);
+    Review save(Review review);
 
 }

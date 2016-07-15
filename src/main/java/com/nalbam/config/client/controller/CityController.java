@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.nalbam.data.jpa.controller;
+package com.nalbam.config.client.controller;
 
-import com.nalbam.data.jpa.domain.City;
-import com.nalbam.data.jpa.service.CityService;
+import com.nalbam.config.client.domain.City;
+import com.nalbam.config.client.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

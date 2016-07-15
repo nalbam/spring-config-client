@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.nalbam</groupId>
-    <artifactId>nalbam-data-jpa</artifactId>
+    <artifactId>nalbam-config-client</artifactId>
     <version>1.0.0</version>
 
     <parent>
@@ -15,7 +15,7 @@
     <properties>
         <java.version>1.8</java.version>
 
-        <start-class>com.nalbam.data.jpa.DataJpaApplication</start-class>
+        <start-class>com.nalbam.config.client.ConfigClientApplication</start-class>
 
         <!-- Repository -->
         <repository-id>nalbam</repository-id>

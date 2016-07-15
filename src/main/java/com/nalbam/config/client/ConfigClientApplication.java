@@ -14,12 +14,16 @@
  * limitations under the License.
  */
 
-package com.nalbam.data.jpa.domain;
+package com.nalbam.config.client;
 
-import com.nalbam.data.jpa.domain.Rating;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-public interface ReviewsSummary {
+@SpringBootApplication
+public class ConfigClientApplication {
 
-	long getNumberOfReviewsWithRating(Rating rating);
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(ConfigClientApplication.class, args);
+    }
 
 }

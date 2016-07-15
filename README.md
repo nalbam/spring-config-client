@@ -1,1 +1,1 @@
-# nalbam-data-jpa
+# nalbam-config-client

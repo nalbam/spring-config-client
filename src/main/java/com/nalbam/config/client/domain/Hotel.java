@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.nalbam.data.jpa.domain;
+package com.nalbam.config.client.domain;
 
 import java.io.Serializable;
 import java.util.Set;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2016 the original author or authors.
+ * Copyright 2012-2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +14,23 @@
  * limitations under the License.
  */
 
-package com.nalbam.data.jpa.controller;
+package com.nalbam.config.client.service;
 
-import com.nalbam.data.jpa.service.HotelService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.nalbam.config.client.domain.*;
 
-@RestController
-@RequestMapping("/hotel")
-public class HotelController {
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
-    @Autowired
-    private HotelService hotelService;
+public interface HotelService {
+
+	Hotel getHotel(City city, String name);
+
+	Page<Review> getReviews(Hotel hotel, Pageable pageable);
+
+	Review getReview(Hotel hotel, int index);
+
+	Review addReview(Hotel hotel, ReviewDetails details);
+
+	ReviewsSummary getReviewSummary(Hotel hotel);
 
 }

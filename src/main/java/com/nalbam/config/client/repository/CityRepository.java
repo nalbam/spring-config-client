@@ -14,21 +14,19 @@
  * limitations under the License.
  */
 
-package com.nalbam.data.jpa.service;
+package com.nalbam.config.client.repository;
 
-import com.nalbam.data.jpa.domain.City;
-import com.nalbam.data.jpa.domain.HotelSummary;
+import com.nalbam.config.client.domain.City;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.Repository;
 
-public interface CityService {
+public interface CityRepository extends Repository<City, Long> {
 
-    Page<City> findAll();
+    Page<City> findAll(Pageable pageable);
 
-    Page<City> findCities(String name, Pageable pageable);
+    Page<City> findByNameContainingAndCountryContainingAllIgnoringCase(String name, String country, Pageable pageable);
 
-    City getCity(String name, String country);
-
-    Page<HotelSummary> getHotels(City city, Pageable pageable);
+    City findByNameAndCountryAllIgnoringCase(String name, String country);
 
 }
