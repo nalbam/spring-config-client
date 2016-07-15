@@ -19,8 +19,13 @@ package com.nalbam.data.jpa.web;
 import com.nalbam.data.jpa.domain.City;
 import com.nalbam.data.jpa.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/city")
@@ -29,7 +34,18 @@ public class CityController {
     @Autowired
     private CityService cityService;
 
-    @ResponseBody
+    @Transactional(readOnly = true)
+    @RequestMapping(method = RequestMethod.GET, value = "all")
+    public Page<City> all() {
+        return this.cityService.findAll();
+    }
+
+    @Transactional(readOnly = true)
+    @RequestMapping(method = RequestMethod.GET, value = "search")
+    public Page<City> search(@RequestParam(value = "name", defaultValue = "") String name, Pageable pageable) {
+        return this.cityService.findCities(name, pageable);
+    }
+
     @Transactional(readOnly = true)
     @RequestMapping(method = RequestMethod.GET, value = "")
     public City get(@RequestParam(value = "state", defaultValue = "Bath") String state,

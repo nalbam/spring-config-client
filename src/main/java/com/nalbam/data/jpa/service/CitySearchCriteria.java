@@ -20,14 +20,11 @@ import org.springframework.util.Assert;
 
 import java.io.Serializable;
 
-class CitySearchCriteria implements Serializable {
+public class CitySearchCriteria implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private String name;
-
-    public CitySearchCriteria() {
-    }
 
     public CitySearchCriteria(String name) {
         Assert.notNull(name, "Name must not be null");
@@ -41,4 +38,5 @@ class CitySearchCriteria implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
 }

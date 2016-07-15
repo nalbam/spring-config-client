@@ -24,7 +24,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
-import org.springframework.util.StringUtils;
 
 @Component("cityService")
 @Transactional
@@ -37,14 +36,13 @@ class CityServiceImpl implements CityService {
     private HotelRepository hotelRepository;
 
     @Override
-    public Page<City> findCities(CitySearchCriteria criteria, Pageable pageable) {
+    public Page<City> findAll() {
+        return this.cityRepository.findAll(null);
+    }
 
-        Assert.notNull(criteria, "Criteria must not be null");
-        String name = criteria.getName();
-
-        if (!StringUtils.hasLength(name)) {
-            return this.cityRepository.findAll(null);
-        }
+    @Override
+    public Page<City> findCities(String name, Pageable pageable) {
+        Assert.notNull(name, "Name must not be null");
 
         String country = "";
         int splitPos = name.lastIndexOf(",");
@@ -54,9 +52,7 @@ class CityServiceImpl implements CityService {
             name = name.substring(0, splitPos);
         }
 
-        return this.cityRepository
-                .findByNameContainingAndCountryContainingAllIgnoringCase(name.trim(),
-                        country.trim(), pageable);
+        return this.cityRepository.findByNameContainingAndCountryContainingAllIgnoringCase(name.trim(), country.trim(), pageable);
     }
 
     @Override

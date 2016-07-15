@@ -70,11 +70,10 @@ class HotelServiceImpl implements HotelService {
     }
 
     private static class ReviewsSummaryImpl implements ReviewsSummary {
-
         private final Map<Rating, Long> ratingCount;
 
-        public ReviewsSummaryImpl(List<RatingCount> ratingCounts) {
-            this.ratingCount = new HashMap<Rating, Long>();
+        ReviewsSummaryImpl(List<RatingCount> ratingCounts) {
+            this.ratingCount = new HashMap<>();
             for (RatingCount ratingCount : ratingCounts) {
                 this.ratingCount.put(ratingCount.getRating(), ratingCount.getCount());
             }

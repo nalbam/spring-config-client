@@ -18,16 +18,17 @@ package com.nalbam.data.jpa.service;
 
 import com.nalbam.data.jpa.domain.City;
 import com.nalbam.data.jpa.domain.HotelSummary;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 public interface CityService {
 
-	Page<City> findCities(CitySearchCriteria criteria, Pageable pageable);
+    Page<City> findAll();
 
-	City getCity(String name, String country);
+    Page<City> findCities(String name, Pageable pageable);
 
-	Page<HotelSummary> getHotels(City city, Pageable pageable);
+    City getCity(String name, String country);
+
+    Page<HotelSummary> getHotels(City city, Pageable pageable);
 
 }
