@@ -2,8 +2,8 @@ spring:
   application:
     name: nalbam
   profiles:
-    active: ${PROFILE:default}
+    active: ${PROFILE:default},push
   cloud:
     config:
-      uri: http://localhost:8888
+      uri: http://${CONFIG_SERVER_HOST:localhost}:${CONFIG_SERVER_PORT:8888}
       label: ${LABEL:master}
