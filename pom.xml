@@ -10,38 +10,19 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.0.RELEASE</version>
+        <version>1.4.2.RELEASE</version>
     </parent>
 
     <properties>
         <java.version>1.8</java.version>
-
-        <!-- Repository -->
-        <repository-id>nalbam</repository-id>
-        <repository-name>nalbam</repository-name>
-        <repository-url>http://repo.nalbam.com/maven2</repository-url>
     </properties>
-
-    <distributionManagement>
-        <repository>
-            <id>${repository-id}</id>
-            <name>${repository-name}</name>
-            <url>dav:${repository-url}</url>
-        </repository>
-        <snapshotRepository>
-            <id>${repository-id}</id>
-            <name>${repository-name}</name>
-            <url>dav:${repository-url}</url>
-            <uniqueVersion>true</uniqueVersion>
-        </snapshotRepository>
-    </distributionManagement>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Brixton.RELEASE</version>
+                <version>Camden.SR3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -75,6 +56,7 @@
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
 
+        <!-- database -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -83,7 +65,7 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <!--<scope>runtime</scope>-->
+            <scope>runtime</scope>
         </dependency>
 
         <!--<dependency>-->
@@ -105,15 +87,6 @@
     </dependencies>
 
     <build>
-        <extensions>
-            <!-- webdav -->
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-webdav-jackrabbit</artifactId>
-                <version>2.7</version>
-            </extension>
-        </extensions>
-
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -132,12 +105,6 @@
                     <check/>
                 </configuration>
             </plugin>
-            <!-- coveralls -->
-            <plugin>
-                <groupId>org.eluder.coveralls</groupId>
-                <artifactId>coveralls-maven-plugin</artifactId>
-                <version>4.2.0</version>
-            </plugin>
         </plugins>
     </build>
 
@@ -148,12 +115,6 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
                 <version>2.7</version>
-            </plugin>
-            <!-- coveralls -->
-            <plugin>
-                <groupId>org.eluder.coveralls</groupId>
-                <artifactId>coveralls-maven-plugin</artifactId>
-                <version>4.2.0</version>
             </plugin>
         </plugins>
     </reporting>
