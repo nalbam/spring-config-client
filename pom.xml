@@ -56,6 +56,13 @@
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
 
+        <!-- nalbam common -->
+        <dependency>
+            <groupId>com.nalbam</groupId>
+            <artifactId>nalbam-common</artifactId>
+            <version>2.0.5</version>
+        </dependency>
+
         <!-- database -->
         <dependency>
             <groupId>mysql</groupId>
