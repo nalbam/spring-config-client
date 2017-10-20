@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  jackson:
+    time-zone: Asia/Seoul
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+
+logging:
+  level:
+    com.yanolja: DEBUG
+
+---
+
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:h2:mem:naya
+    driverClassName: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    generate-ddl: false
+    show-sql: true
+  redis:
+    host: localhost
+    database: 5
