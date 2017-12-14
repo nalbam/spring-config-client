@@ -20,7 +20,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+        <!-- nalbam-repo -->
+        <repository-id>nalbam-repo</repository-id>
+        <repository-name>nalbam-repo</repository-name>
+        <repository-url>http://repo.nalbam.com/maven2</repository-url>
+
         <!-- versions -->
+        <nalbam.version>0.2.0.94</nalbam.version>
         <hikaricp.version>2.6.3</hikaricp.version>
         <netty.version>4.1.15.Final</netty.version>
         <querydsl.version>4.1.4</querydsl.version>
@@ -66,6 +72,19 @@
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
+        <!-- spring-eureka -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+
+        <!-- nalbam-common -->
+        <dependency>
+            <groupId>com.nalbam</groupId>
+            <artifactId>nalbam-common</artifactId>
+            <version>${nalbam.version}</version>
+        </dependency>
+
         <!-- exclude tomcat-jdbc, Spring Boot will use HikariCP automatically  -->
         <dependency>
             <groupId>com.zaxxer</groupId>
@@ -105,10 +124,24 @@
             <version>0.0.7</version>
         </dependency>
 
+        <!-- logstash -->
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>4.11</version>
+        </dependency>
+
         <!-- lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- actuator -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-actuator</artifactId>
             <optional>true</optional>
         </dependency>
 
@@ -170,5 +203,21 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>spring-releases</id>
+            <name>Spring Releases</name>
+            <url>https://repo.spring.io/release</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>${repository-id}</id>
+            <name>${repository-name}</name>
+            <url>${repository-url}</url>
+        </repository>
+    </repositories>
 
 </project>

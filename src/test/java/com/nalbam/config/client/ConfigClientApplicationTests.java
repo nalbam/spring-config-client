@@ -15,7 +15,7 @@ public class ConfigClientApplicationTests {
 
     @Test
     public void contextLoads() {
-        log.debug("## contextLoads.");
+        log.debug("## contextLoads ##");
     }
 
 }
