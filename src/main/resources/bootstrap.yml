@@ -1,6 +1,6 @@
 spring:
   application:
-    name: nalbam
+    name: config-client
   profiles:
     active: ${PROFILE:default}
   cloud:
