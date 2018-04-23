@@ -22,6 +22,7 @@ public class HelloController {
         Random random = new Random();
 
         if (rate > random.nextInt(100)) {
+            // Success
             return greetings.get(random.nextInt(greetings.size()));
         }
 
