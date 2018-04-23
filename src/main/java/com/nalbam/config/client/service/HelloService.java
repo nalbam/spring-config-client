@@ -10,23 +10,69 @@ import java.util.Random;
 @Service
 public class HelloService {
 
+    private List<String> greetings = Arrays.asList("Hi there", "Greetings", "Lok'tar ogar");
+
     @HystrixCommand(fallbackMethod = "helloFallback")
     public String hello(Integer rate) {
-        List<String> greetings = Arrays.asList("Hi there", "Greetings", "Lok'tar ogar");
-
         Random random = new Random();
 
         if (rate > random.nextInt(100)) {
-            // Success
-            return greetings.get(random.nextInt(greetings.size()));
+            return greetings.get(random.nextInt(greetings.size())) + " " + rate;
         }
 
-        // Error
+        return greetings.get(greetings.size());
+    }
+
+    @HystrixCommand(fallbackMethod = "helloFallback")
+    public String hello20() {
+        Integer rate = 20;
+        Random random = new Random();
+
+        if (rate > random.nextInt(100)) {
+            return greetings.get(random.nextInt(greetings.size())) + " " + rate;
+        }
+
+        return greetings.get(greetings.size());
+    }
+
+    @HystrixCommand(fallbackMethod = "helloFallback")
+    public String hello40() {
+        Integer rate = 20;
+        Random random = new Random();
+
+        if (rate > random.nextInt(100)) {
+            return greetings.get(random.nextInt(greetings.size())) + " " + rate;
+        }
+
+        return greetings.get(greetings.size());
+    }
+
+    @HystrixCommand(fallbackMethod = "helloFallback")
+    public String hello60() {
+        Integer rate = 20;
+        Random random = new Random();
+
+        if (rate > random.nextInt(100)) {
+            return greetings.get(random.nextInt(greetings.size())) + " " + rate;
+        }
+
+        return greetings.get(greetings.size());
+    }
+
+    @HystrixCommand(fallbackMethod = "helloFallback")
+    public String hello80() {
+        Integer rate = 20;
+        Random random = new Random();
+
+        if (rate > random.nextInt(100)) {
+            return greetings.get(random.nextInt(greetings.size())) + " " + rate;
+        }
+
         return greetings.get(greetings.size());
     }
 
     private String helloFallback(Integer rate) {
-        return "Bye";
+        return "Bye " + rate;
     }
 
 }

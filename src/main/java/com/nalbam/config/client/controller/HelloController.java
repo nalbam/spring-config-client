@@ -21,22 +21,22 @@ public class HelloController {
 
     @GetMapping(value = "/hello20")
     public String hello20() {
-        return helloService.hello(20);
+        return helloService.hello20();
     }
 
     @GetMapping(value = "/hello40")
     public String hello40() {
-        return helloService.hello(40);
+        return helloService.hello40();
     }
 
     @GetMapping(value = "/hello60")
     public String hello60() {
-        return helloService.hello(60);
+        return helloService.hello60();
     }
 
     @GetMapping(value = "/hello80")
     public String hello80() {
-        return helloService.hello(80);
+        return helloService.hello80();
     }
 
 }
