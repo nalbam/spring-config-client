@@ -17,6 +17,8 @@
         </encoder>
     </appender>
 
+    <jmxConfigurator/>
+
     <!--<springProfile name="default">-->
     <!--<root level="INFO">-->
     <!--<appender-ref ref="STDOUT"/>-->
