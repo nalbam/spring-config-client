@@ -75,4 +75,8 @@ public class HelloService {
         return "Bye " + rate;
     }
 
+    private String helloFallback() {
+        return "Bye";
+    }
+
 }
