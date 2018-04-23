@@ -37,7 +37,7 @@ public class HelloService {
 
     @HystrixCommand(fallbackMethod = "helloFallback")
     public String hello40() {
-        Integer rate = 20;
+        Integer rate = 40;
         Random random = new Random();
 
         if (rate > random.nextInt(100)) {
@@ -49,7 +49,7 @@ public class HelloService {
 
     @HystrixCommand(fallbackMethod = "helloFallback")
     public String hello60() {
-        Integer rate = 20;
+        Integer rate = 60;
         Random random = new Random();
 
         if (rate > random.nextInt(100)) {
@@ -61,7 +61,7 @@ public class HelloService {
 
     @HystrixCommand(fallbackMethod = "helloFallback")
     public String hello80() {
-        Integer rate = 20;
+        Integer rate = 80;
         Random random = new Random();
 
         if (rate > random.nextInt(100)) {
