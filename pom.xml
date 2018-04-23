@@ -47,6 +47,12 @@
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
 
+        <!-- spring-cloud-hystrix -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+        </dependency>
+
         <!-- spring-boot -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
