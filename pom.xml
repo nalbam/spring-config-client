@@ -78,27 +78,7 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- query-dsl -->
-        <dependency>
-            <groupId>com.querydsl</groupId>
-            <artifactId>querydsl-jpa</artifactId>
-        </dependency>
-
-        <!-- netty -->
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>${netty.version}</version>
-        </dependency>
-
-        <!-- slack -->
-        <dependency>
-            <groupId>in.ashwanthkumar</groupId>
-            <artifactId>slack-java-webhook</artifactId>
-            <version>0.0.7</version>
+            <scope>runtime</scope>
         </dependency>
 
         <!-- lombok -->
