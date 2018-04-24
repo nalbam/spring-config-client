@@ -10,7 +10,7 @@ import java.util.Random;
 @Service
 public class HelloService {
 
-    private List<String> greetings = Arrays.asList("Hi there", "Greetings", "Lok'tar ogar");
+    private List<String> greetings = Arrays.asList("Hi there", "Greetings", "Lok'tar");
 
     @HystrixCommand(fallbackMethod = "helloFallback")
     public String hello(Integer rate) {
@@ -24,8 +24,8 @@ public class HelloService {
     }
 
     @HystrixCommand(fallbackMethod = "helloFallback")
-    public String hello20() {
-        Integer rate = 20;
+    public String hello33() {
+        Integer rate = 33;
         Random random = new Random();
 
         if (rate > random.nextInt(100)) {
@@ -36,8 +36,8 @@ public class HelloService {
     }
 
     @HystrixCommand(fallbackMethod = "helloFallback")
-    public String hello40() {
-        Integer rate = 40;
+    public String hello66() {
+        Integer rate = 66;
         Random random = new Random();
 
         if (rate > random.nextInt(100)) {
@@ -48,20 +48,8 @@ public class HelloService {
     }
 
     @HystrixCommand(fallbackMethod = "helloFallback")
-    public String hello60() {
-        Integer rate = 60;
-        Random random = new Random();
-
-        if (rate > random.nextInt(100)) {
-            return greetings.get(random.nextInt(greetings.size())) + " " + rate;
-        }
-
-        return greetings.get(greetings.size());
-    }
-
-    @HystrixCommand(fallbackMethod = "helloFallback")
-    public String hello80() {
-        Integer rate = 80;
+    public String hello99() {
+        Integer rate = 99;
         Random random = new Random();
 
         if (rate > random.nextInt(100)) {

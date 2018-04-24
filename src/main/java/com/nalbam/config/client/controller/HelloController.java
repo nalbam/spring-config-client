@@ -19,24 +19,19 @@ public class HelloController {
         return helloService.hello(rate);
     }
 
-    @GetMapping(value = "/hello20")
-    public String hello20() {
-        return helloService.hello20();
+    @GetMapping(value = "/hello33")
+    public String hello33() {
+        return helloService.hello33();
     }
 
-    @GetMapping(value = "/hello40")
-    public String hello40() {
-        return helloService.hello40();
+    @GetMapping(value = "/hello66")
+    public String hello66() {
+        return helloService.hello66();
     }
 
-    @GetMapping(value = "/hello60")
-    public String hello60() {
-        return helloService.hello60();
-    }
-
-    @GetMapping(value = "/hello80")
-    public String hello80() {
-        return helloService.hello80();
+    @GetMapping(value = "/hello99")
+    public String hello99() {
+        return helloService.hello99();
     }
 
 }
