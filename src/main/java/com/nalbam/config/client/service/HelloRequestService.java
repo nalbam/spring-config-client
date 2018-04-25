@@ -13,25 +13,25 @@ public class HelloRequestService {
 
     @HystrixCommand(fallbackMethod = "helloFallback")
     public String hello(String name, Integer rate) {
-        String greeting = this.restTemplate.getForObject("http://api-gateway/service-demo/hello?rate=" + rate, String.class);
+        String greeting = this.restTemplate.getForObject("http://service-demo/hello?rate=" + rate, String.class);
         return String.format("%s, %s!", greeting, name);
     }
 
     @HystrixCommand(fallbackMethod = "helloFallback")
     public String hello33(String name) {
-        String greeting = this.restTemplate.getForObject("http://api-gateway/service-demo/hello33", String.class);
+        String greeting = this.restTemplate.getForObject("http://service-demo/hello33", String.class);
         return String.format("%s, %s!", greeting, name);
     }
 
     @HystrixCommand(fallbackMethod = "helloFallback")
     public String hello66(String name) {
-        String greeting = this.restTemplate.getForObject("http://api-gateway/service-demo/hello66", String.class);
+        String greeting = this.restTemplate.getForObject("http://service-demo/hello66", String.class);
         return String.format("%s, %s!", greeting, name);
     }
 
     @HystrixCommand(fallbackMethod = "helloFallback")
     public String hello99(String name) {
-        String greeting = this.restTemplate.getForObject("http://api-gateway/service-demo/hello99", String.class);
+        String greeting = this.restTemplate.getForObject("http://service-demo/hello99", String.class);
         return String.format("%s, %s!", greeting, name);
     }
 

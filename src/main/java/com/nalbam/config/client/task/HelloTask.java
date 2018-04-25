@@ -10,26 +10,40 @@ import org.springframework.stereotype.Component;
 @Component
 public class HelloTask {
 
+    private Boolean enabled = false;
+
     @Autowired
     private HelloRequestService helloRequestService;
 
     @Scheduled(fixedRate = 100)
     public void send100() {
+        if (!this.enabled) {
+            return;
+        }
         log.info("Task : " + helloRequestService.hello("Task100", 100));
     }
 
     @Scheduled(fixedRate = 100)
     public void send_33() {
+        if (!this.enabled) {
+            return;
+        }
         log.info("Task : " + helloRequestService.hello33("Task-33"));
     }
 
     @Scheduled(fixedRate = 100)
     public void send_66() {
+        if (!this.enabled) {
+            return;
+        }
         log.info("Task : " + helloRequestService.hello66("Task-66"));
     }
 
     @Scheduled(fixedRate = 100)
     public void send_99() {
+        if (!this.enabled) {
+            return;
+        }
         log.info("Task : " + helloRequestService.hello99("Task-99"));
     }
 
