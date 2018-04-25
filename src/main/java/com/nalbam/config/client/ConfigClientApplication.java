@@ -12,7 +12,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableCircuitBreaker
 @EnableDiscoveryClient
 @SpringBootApplication
-@RibbonClient(name = "service-demo", configuration = RibbonConfig.class)
+@RibbonClient(name = "api-gateway", configuration = RibbonConfig.class)
 public class ConfigClientApplication {
 
     public static void main(final String[] args) {
