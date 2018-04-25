@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class HelloTask {
 
-    private Boolean enabled = false;
+    private Boolean enabled = true;
 
     @Autowired
     private HelloRequestService helloRequestService;
