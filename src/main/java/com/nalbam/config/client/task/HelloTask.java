@@ -3,6 +3,7 @@ package com.nalbam.config.client.task;
 import com.nalbam.config.client.service.HelloRequestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +11,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class HelloTask {
 
-    private Boolean enabled = true;
+    @Value("${task.enabled}")
+    private Boolean enabled;
 
     @Autowired
     private HelloRequestService helloRequestService;
